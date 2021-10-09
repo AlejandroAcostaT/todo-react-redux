@@ -4,6 +4,7 @@
     border: 1px solid;
     margin-right: 3%;
     min-width: 5em;
+    width: max-content;
     padding: 0.7em;
     border-radius: 4px;
     font-size: 16px;

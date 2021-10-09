@@ -38,7 +38,7 @@ function Tasks() {
             <Button text={'Add New Task'} type={'main'} onClick={click}/>
         </div>
         <div className='container'>
-            <TaskForm/>
+            <TaskForm type='edit'/>
             {
                 tasks.map((task:Task) => (
                     <TaskItem 
