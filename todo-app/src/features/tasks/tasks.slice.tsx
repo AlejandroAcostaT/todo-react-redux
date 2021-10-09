@@ -1,13 +1,8 @@
 // DUCKS pattern
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import Task from '../../shared/interfaces/task';
 
-interface TaskState {
-    id: number;
-    title: string;
-    completed: boolean;
-};
-
-const initialState: TaskState[] = [
+const initialState: Task[] = [
     {id: 1, title: 'Shopping', completed: false},
     {id: 2, title: 'Laundry', completed: false},
     {id: 3, title: 'Homework', completed: false}
@@ -19,7 +14,7 @@ const taskSlice = createSlice({
     reducers: {
         //add new task -- receives title of task as string
         created( state, action: PayloadAction<string>) {
-            const newTask: TaskState = {
+            const newTask: Task = {
                 id: Date.now(),
                 title: action.payload,
                 completed: false
@@ -28,19 +23,23 @@ const taskSlice = createSlice({
         },
 
         //update task -- receives a task
-        updated( state, action: PayloadAction<TaskState>) {
-            state[action.payload.id].title = action.payload.title;
+        updated( state, action: PayloadAction<Task>) {
+            let indexOfTask: number = state.findIndex(
+                task => task.id === action.payload.id
+            );
+            state[indexOfTask].title = action.payload.title;
         },
 
         //delete task -- receives id of task
-        deleted( state, action: PayloadAction<TaskState>) {
-            let indexOfTask: number = state.indexOf(action.payload)
+        deleted( state, action: PayloadAction<number>) {
+            let indexOfTask: number = state.findIndex(task => task.id === action.payload)
             state.splice(indexOfTask, 1);
         },
 
         //complete task -- receives id of task
         completed( state, action: PayloadAction<number>) {
-            state[action.payload].completed = !state[action.payload].completed;
+            let indexOfTask: number = state.findIndex(task => task.id === action.payload)
+            state[indexOfTask].completed = !state[indexOfTask].completed;
         },
     }
 });

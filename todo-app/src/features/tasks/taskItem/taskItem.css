@@ -1,0 +1,20 @@
+.item {
+    background-color: var(--color-white);
+    border-radius: 10px;
+    border: 1px solid;
+    border-color: var(--color-secondary);
+    margin-top: 1%;
+    margin-bottom: 1%;
+    padding: 0.5%;
+}
+
+.item-check {
+    font-size: 20px;
+    margin-left: 2%;
+}
+
+.item-title {
+    font-size: 20px;
+    margin-left: 2%;
+}
+
