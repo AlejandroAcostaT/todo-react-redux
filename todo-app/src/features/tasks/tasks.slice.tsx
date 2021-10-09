@@ -4,7 +4,7 @@ import Task from '../../shared/interfaces/task';
 
 const initialState: Task[] = [
     {id: 1, title: 'Shopping', completed: false},
-    {id: 2, title: 'Laundry', completed: false},
+    {id: 2, title: 'Laundry', completed: true},
     {id: 3, title: 'Homework', completed: false}
 ];
 

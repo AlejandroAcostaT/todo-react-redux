@@ -7,6 +7,7 @@ import TaskItem from './taskItem/TaskItem';
 
 import Task from '../../shared/interfaces/task';
 import './tasks.css';
+import Button from '../../shared/components/button/Button';
 
 function Tasks() {
     const tasks = useAppSelector((state) => state.tasks);
@@ -26,9 +27,16 @@ function Tasks() {
         dispatch(completed(0));
     }
 
+    const click = () => {
+
+    }
+
   return (
     <div className="container container-list">
-        <h1 className='list-title'>My Todo List</h1>
+        <div className='container-header'>
+            <h1 className='list-title'>My Todo List</h1>
+            <Button text={'Add New Task'} type={'main'} onClick={click}/>
+        </div>
         <div className='container'>
             <TaskForm/>
             {

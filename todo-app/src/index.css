@@ -4,6 +4,9 @@
   --color-secondary: #b5bdc2;
   --color-dark: #374785;
   --color-white: #FFF;
+
+  --color-button-main-click: #2a345e;
+  --color-button-danger-click: #ec3636;
 }
 
 body {

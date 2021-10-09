@@ -8,9 +8,16 @@
     padding: 0.5%;
 }
 
+.item-container{
+    display: flex;
+    flex: 5;
+    align-items: center;
+    margin-left: 2%;
+}
+
 .item-check {
     font-size: 20px;
-    margin-left: 2%;
+    color: var(--color-dark);
 }
 
 .item-title {
@@ -18,3 +25,13 @@
     margin-left: 2%;
 }
 
+.item-title__completed {
+    text-decoration: line-through;
+}
+
+.button-container{
+    display: flex;
+    flex: 2;
+    justify-content: flex-end;
+    align-items: center;
+}
