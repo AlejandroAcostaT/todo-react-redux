@@ -32,5 +32,6 @@ code {
 }
 
 .container__row {
+  display: flex;
   flex-flow: row;
 }
