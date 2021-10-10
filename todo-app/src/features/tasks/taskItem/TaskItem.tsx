@@ -7,7 +7,7 @@ import {FaRegSquare, FaRegCheckSquare} from 'react-icons/fa';
 
 interface Props {
   task: Task,
-  showForm: boolean,
+  showForm: boolean, //if form is showing the Edit and Delete Buttons are hidden
   onEdit: (task: Task)=> void,
   onDelete: (id:number)=> void,
   onComplete: (id:number)=> void

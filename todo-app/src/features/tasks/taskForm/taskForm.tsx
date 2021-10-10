@@ -5,7 +5,7 @@ import Button from '../../../shared/components/button/Button';
 
 interface Props {
   task: Task,
-  formCreate: boolean,
+  formCreate: boolean, //change text on placeholders and buttons
   onSubmit: (formTask: Task) => void
   onCancel: () => void
 };
