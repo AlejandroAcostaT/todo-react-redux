@@ -3,15 +3,20 @@ import './button.css';
 
 interface Props {
     text: string,
-    onClick: Function,
-    type: 'main' | 'danger'
+    onClick: () => void,
+    type: 'main' | 'danger',
+    isSubmit?: boolean
 };
 
-const Button: FC<Props> = ({text, onClick, type}) => {
+const Button: FC<Props> = ({text, onClick, type, isSubmit}) => {
   const buttonType: string = 'btn__' + type;
     
   return (
-    <button className={'btn '+buttonType} onClick={onClick()}>{text}</button>
+    <button 
+      className={'btn '+buttonType} 
+      onClick={()=>onClick()}
+      type={isSubmit ? 'submit' : undefined}
+    >{text}</button>
   );
 }
 
